@@ -35,18 +35,12 @@ public class Main {
         for (int i = 1; i <=100; i++) {
             new Passengers("Passenger "+i,cdl,s).start();
         }
-        while (cdl.getCount()>1){
-            try {
-                Thread.currentThread().sleep(100);
-            } catch (Exception e) {
-
-            }
-        }
-        try {
-            Thread.currentThread().sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+       while(cdl.getCount()>1){
+           try {
+               Thread.currentThread().sleep(100);
+           } catch (Exception ignore) {
+           }
+       }
         System.out.println("The bus is full!!!\nBON VOYAGE!!!");
         cdl.countDown();
     }
